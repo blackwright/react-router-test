@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 type StyledProps = {
-  background: string;
   stackIndex: number;
 };
 
 const StyledView = styled(motion.div)<StyledProps>`
-  background: ${({ background }) => background};
   z-index: ${({ stackIndex }) => stackIndex};
+  background: gray;
+  box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.75);
   position: absolute;
   top: 0;
   left: 0;
@@ -28,7 +28,7 @@ export const View: React.FC<ViewProps> = (props) => (
     initial="initial"
     animate="animate"
     exit="exit"
-    transition={{ clamp: true, ease: 'easeInOut', duration: 0.3 }}
+    transition={{ ease: 'easeInOut', duration: 0.3 }}
     {...props}
   />
 );
